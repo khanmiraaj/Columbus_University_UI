@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 background">
+            <img src="./assets/images/college.jpg" alt="">
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 signin">
+            <div class="logo">
+                <img src="./assets/images/columbus_logo.png" alt="Columbus University logo">
+            </div>
+           <div class="block">
+            <div class="slogan">
+                <p>Education is the movement from darkness to light.</p>
+            </div>
+           </div>
+            <div class="login mt-3">
+                <div class="signinheading">
+                    <h3>SIGN IN</h3>
+                </div>
+                <div class="loginform">
+                    <form [formGroup]="loginform" (ngSubmit)="onSignIn()">
+                        <div class="mb-3 mt-3">
+                            <label for="rollno" class="form-label">University Roll Number</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Enter Rollno" formControlName="universityRollNo">
+                            <span *ngIf="!loginform.get('universityRollNo').valid && 
+                                 loginform.get('universityRollNo').touched" style="color: red;"> please enter valid
+                                roll no</span>
+                            <span *ngIf="submitted && 
+                                 loginform.get('universityRollNo').untouched" style="color: red;"> please enter roll
+                                no</span>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="password" class="form-label">Password </label>
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Enter password" formControlName="password">
+                            <span *ngIf="!loginform.get('password').valid && 
+                                loginform.get('password').touched" style="color: red;"> please enter password</span>
+                            <span *ngIf="submitted && 
+                                loginform.get('password').untouched" style="color: red;"> please enter password</span>
+                        </div>
+                        <div class="mb-2 forgotpwd"><a href="">Forgot Password?</a></div>
+                        <div *ngIf= "invalid_cred && submitted" class="alert alert-danger" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -->
+                            Invalid Credentials
+                          </div>
+                        <div class="submit ">
+                            <div class="row1">
+                                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5 box">
+                                    <button class="btn btn-primary" type="submit">Sign In</button>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5 box">
+                                    <button class="btn btn-success" routerLink="signup" type="click">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

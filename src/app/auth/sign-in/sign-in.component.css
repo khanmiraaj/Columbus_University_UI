@@ -1,0 +1,140 @@
+ .background{
+    opacity: 1;
+    background-color: rgb(21, 21, 21);
+    overflow: hidden;
+    
+
+
+}
+ .background img {
+
+     /* background-image: url("./images/college.jpg"); */
+
+     /* height: 800px;
+    width: 45%;
+    background-size: cover;
+    background-repeat: no-repeat; */
+
+     width: 105%;
+     height: 100vh;
+     opacity: 0.3;
+
+
+
+ }
+
+ .row {
+     width: 100vw;
+ }
+
+ .container {
+     padding: 0;
+     margin-left: 0px;
+ }
+
+ .signin {
+     padding-right: 50px;
+ }
+
+ .logo {
+     display: flex;
+     justify-content: center;
+ }
+
+ .logo img {
+     height: 160px;
+ }
+
+ .slogan {
+     /* font-family: 'Sofia'; */
+     
+     font-family: 'Akaya Kanadaka';
+     font-family: "Lucida Console", "Courier New", monospace;
+     font-family: 'Courier New', monospace;
+     text-align: center;
+     font-size: 23px;
+     letter-spacing: 0.7px;
+     font-weight: bold;
+     text-transform: uppercase;
+     
+ }
+
+ .signinheading {
+     display: flex;
+     justify-content: flex-start;
+     padding-left: 50px;
+
+ }
+
+ .form-control {
+     line-height: 2.0;
+ }
+
+ .forgotpwd {
+
+     display: flex;
+     flex-direction: row-reverse;
+
+ }
+ form{
+    padding-left: 20px;
+ }
+
+ .submit  .row1{
+     display: flex;
+     justify-content: flex-start;
+     
+      margin-top: 50px;
+      margin-bottom: 30px;
+      margin-left: 30px;
+ }
+ button{
+    padding: 10px 25px;
+    margin-top: 8px;
+    margin-right: 10px;
+    
+ }
+ @media screen and (max-width: 767px) {
+    .background img {
+      width:120vw;
+      object-fit: fill;
+      height:250px;
+    }
+    .slogan{
+        text-align: center;
+        padding-left: 20px
+    }
+    .row{
+        width: 120vw;
+    }
+    .background{
+        width: 120vw;
+    }
+  }
+
+
+
+  @media screen and (max-width: 280px){
+    .background img{
+        width: 110vw;
+        object-fit: fill;
+    }
+    
+    button{
+        width: 100px;
+        padding: 8px 16px;
+    }
+    .submit, .row1{
+        padding-left: 5px ;
+    }
+    .box{
+        margin-left:0px;
+    }
+    .logo{
+        width: 100vw;
+        padding-left:60px;
+        place-items: center;
+    }
+  }
+
+  
