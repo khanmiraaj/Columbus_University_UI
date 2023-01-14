@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router, RouteReuseStrategy } from '@angular/router';
+import { RegisterStudent } from 'src/app/Model/RegisterStudent.model';
 import { Signin } from 'src/app/Model/signin.model';
 import { StudentResponse } from 'src/app/Model/StudentResponse.model';
 import { ColumbusService } from 'src/app/service/columbus.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,8 +16,12 @@ export class SignInComponent implements OnInit {
   submitted: boolean = false;
   logindata: Signin;
   invalid_cred:boolean= false;
+  valid_cred:boolean=false;
+  universityRollNo:string;
+  registerStudent:RegisterStudent=new RegisterStudent();
 
-  constructor(private columbus_service: ColumbusService) { }
+  constructor(private columbus_service: ColumbusService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -47,7 +54,20 @@ export class SignInComponent implements OnInit {
      if(res.statusCode.charAt(0)== 'F'){
         this.invalid_cred=true;
      }
-   })
+     if(res.statusCode.charAt(0)=='S'){
+      this.valid_cred=true;
+      Swal.fire("Congratulation!..",'Login Successfully','success')
+      this.router.navigate(['student-details',this.registerStudent.universityRollNo]);
+     }
+   }) 
+   
+  }
+
+  Register(){
+    this.router.navigate(['/signup']);
+  }
+  removeMessage(){
+    this.invalid_cred=false;
   }
 
 

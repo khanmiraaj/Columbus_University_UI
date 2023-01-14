@@ -1,0 +1,178 @@
+Register_Student
+
+API:http://localhost:8080/student/new-student
+
+  request:
+  
+     {
+    "universityRollNo": "D21MCA12139",
+    "firstName": "miraaj",
+    "lastName": "khan",
+    "course": "UG",
+    "courseName": "MCA",
+    "dateOfBirth": "06-12-1998",
+    "semester": 3,
+    "password": "Safe@3033"
+    }
+	
+	Success Response:
+	{
+    "statusCode": "S0000",
+    "description": "student registedred successfully",
+    "studentDto": null
+    }
+
+	Failed Response:
+	
+	{
+    "statusCode": "F0000",
+    "description": "You Are  ALready Registered With Us",
+    "studentDto": null
+    }
+	
+	
+
+SignIn
+
+API:http://localhost:8080/student/validate-student
+
+Request:
+   {
+    "universityRollNo": "D21MCA12137",
+    "password": "Safe@3033"
+   }
+   
+Success Response:
+
+
+{
+    "statusCode": "S0001",
+    "description": "login successful/valid credential",
+    "studentDto": {
+        "universityRollNo": "D21MCA12137",
+        "firstName": "miraaj",
+        "lastName": "khan",
+        "course": "UG",
+        "courseName": "MCA",
+        "dateOfBirth": "06-12-1998",
+        "semester": "3",
+        "password": null
+    }
+}
+
+Failed Response
+
+{
+    "statusCode": "F0002",
+    "description": "login Failed/Invalid credential",
+    "studentDto": null
+}
+
+
+
+Forgot-Password
+
+API:http://localhost:8080/student/reset-password
+
+  Request:
+    {
+      "universityRollNo": "D21MCA12138"
+    }
+	
+	
+	Success Response:
+    {
+    "statusCode": "S0002",
+    "description": "Success",
+    "studentDto": {
+        "universityRollNo": "D21MCA12138",
+        "firstName": null,
+        "lastName": null,
+        "course": null,
+        "courseName": null,
+        "dateOfBirth": null,
+        "semester": null,
+        "password": null
+    }
+	}
+	
+	Failed Response
+	
+	{
+    "statusCode": "F0003",
+    "description": "Please Enter a valid UniversityROllNo",
+    "studentDto": null
+    }
+	
+	
+update-password
+
+API:
+
+
+Request:
+
+  {
+    "universityRollNo": "D21MCA12137",
+    "newPassword": "1234",
+    "confirmPassword": "1234"
+  }	
+  
+ Success 
+ 
+   {
+    "statusCode": "S0003",
+    "description": "Password updated successfully",
+    "studentDto": null
+   }
+   
+   
+  Failed
+   {
+    "statusCode": "F0004",
+    "description": "Failed to update password",
+    "studentDto": null
+  } 
+  
+  
+  view-Profile
+  
+  API:http://localhost:8080/student/D21MCA12137
+  
+  Response:
+  
+  
+  {
+    "statusCode": "S0004",
+    "description": "Success",
+    "studentDto": {
+        "universityRollNo": "D21MCA12137",
+        "firstName": "miraaj",
+        "lastName": "khan",
+        "course": "UG",
+        "courseName": "MCA",
+        "dateOfBirth": "06-12-1998",
+        "semester": "3",
+        "password": "Safe@3033"
+    }
+}
+  
+  
+  
+
+
+
+  
+	
+	
+
+	
+	
+
+
+
+    
+
+
+	
+	
