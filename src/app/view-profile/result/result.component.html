@@ -5,7 +5,7 @@
       <a class="nav-link active"  aria-current="page" routerLink="/student/view_profile/result">Result</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/student/view_profile/payfees">Pay Fees</a>
+      <a class="nav-link" routerLink="/student/view_profile/{{datas.studentResultDto.universityRollNo}}/payfees">Pay Fees</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Raise Query</a>
@@ -17,7 +17,7 @@
       <a class="nav-link" href="#">About Us</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link float-end" routerLink="/student/view_profile">Personal Info</a>
+      <a class="nav-link float-end" routerLink="/student/view_profile/{{datas.studentResultDto.universityRollNo}}">Personal Info</a>
     </li>
   </ul>
   <!-- Nav End -->
@@ -56,23 +56,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+            <tr *ngFor="let data of datas.studentResultDto.subjectMarksDetails">
+              <td>{{data.subjectCode}}</td>
+              <td>{{data.subjectName}}</td>
+              <td>{{data.fullMarks}}</td>
+              <td>{{data.marksObtained}}</td>
+              <td>{{data.grade}}</td>
             </tr>
           </tbody>
         </table>

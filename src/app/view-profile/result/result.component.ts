@@ -21,7 +21,7 @@ export class ResultComponent implements OnInit {
     this.universityRollNo=this.route.snapshot.params['unversityRollNo'];
     this.columbusService.getStudentResult(this.universityRollNo).subscribe(data=>{
       this.datas=this.studentResponse=data
-      console.log(this.datas.studentResultDto)
+      console.log(" result", this.datas.studentResultDto.subjectMarksDetails)
     })
 
   }
