@@ -1,19 +1,47 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Pay Fee</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-        
         <!-- <h4 class="noselect">{{data.feeAmount}}</h4> -->
         <div class="input-group mb-3">
           <!-- <label for="">15000 : </label> -->
           <span class="input-group-text" id="inputGroup-sizing-sm">Amount</span>
-          <input type="text" class="form-control" placeholder={{data.feeAmount}} aria-label="Recipient's username" aria-describedby="button-addon2">
-          <button class="btn btn-primary" type="button" id="button-addon2">Pay new</button>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="{{ datas.feeDetailsDto.feeAmount }}"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-primary"
+            type="button"
+            id="button-addon2"
+            (click)="
+              updateFeeDetails(
+                datas.feeDetailsDto.universityRollNo,
+                datas.feeDetailsDto.feeAmount
+              )
+            "
+          >
+            Pay now
+          </button>
         </div>
       </div>
     </div>
@@ -22,45 +50,82 @@
 
 <div class="container my-5 py-5">
   <div class="my-5 py-5">
-    
     <div class="centerLine"><h4 class="text-center">Pay Fee</h4></div>
-     <!-- Nav Start  -->
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a
-        class="nav-link active"
-        aria-current="page"
-        routerLink="/student/view_profile/result"
-        >Result</a
-      >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/student/view_profile/payfees"
-        >Pay Fees</a
-      >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/student/view_profile/raise"
-        >Raise Query</a
-      >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/student/view_profile/contactus"
-        >Contact Us</a
-      >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/student/view_profile/aboutus"
-        >About Us</a
-      >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link float-end" routerLink="/student/view_profile"
-        >Personal Info</a
-      >
-    </li>
-  </ul>
-  <!-- Nav End -->
+    <!-- Nav Start  -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          aria-current="page"
+          routerLink="/student/view_profile/result"
+          >Result</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/student/view_profile/payfees"
+          >Pay Fees</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/student/view_profile/raise"
+          >Raise Query</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/student/view_profile/contactus"
+          >Contact Us</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/student/view_profile/aboutus"
+          >About Us</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link float-end" routerLink="/student/view_profile"
+          >Personal Info</a
+        >
+      </li>
+    </ul>
+    <!-- Nav End -->
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          aria-current="page"
+          routerLink="/student/view_profile"
+          >Pay Fees</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/student/view_profile/{{
+            datas.feeDetailsDto.universityRollNo
+          }}/result"
+          >Result</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Raise Query</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link float-end"
+          routerLink="/student/view_profile/{{
+            this.datas.feeDetailsDto.universityRollNo
+          }}"
+          >Personal Info</a
+        >
+      </li>
+    </ul>
     <div class="table-responsive">
       <table class="table align-middle table table-bordered">
         <thead>
@@ -69,22 +134,28 @@
             <th>Semester</th>
             <th>Pending fee Amount</th>
             <th>Last date</th>
-            <th>Last Fee Charges</th>
-            <th>Extension Details</th>
+            <th>Late Fee Charges</th>
+            <th>Status</th>
             <th>To Pay Fee payment(tick below)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>D21MCA12137</td>
-            <td>3</td>
-            <td>{{data.feeAmount}}</td>
-            <td>{{data.lastdate}}</td>
-            <td>{{data.lastFeeCharges}}</td>
-            <td>{{data.extensionDetails}}</td>
+            <td>{{ datas.feeDetailsDto.universityRollNo }}</td>
+            <td>{{ datas.feeDetailsDto.semester }}</td>
+            <td>{{ datas.feeDetailsDto.feeAmount }}</td>
+            <td>{{ datas.feeDetailsDto.lastDate }}</td>
+            <td>{{ datas.feeDetailsDto.lateFee }}</td>
+            <td>{{ datas.feeDetailsDto.status }}</td>
             <td>
               <!-- <button class="btn btn-info btn-sm" [disabled]="feesAmount"></button> -->
-              <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" [disabled]="feesAmount">
+              <!-- [disabled]="feesAmount" -->
+              <button
+                type="button"
+                class="btn btn-info btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
                 Pay Fee
               </button>
             </td>
