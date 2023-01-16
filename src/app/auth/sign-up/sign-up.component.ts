@@ -28,11 +28,15 @@ export class SignUpComponent implements OnInit {
     universityRollNo: new FormControl('', [Validators.required, Validators.minLength(6)]),
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
+    fatherName:  new FormControl('', Validators.required),
+    motherName:  new FormControl('', Validators.required),
     course: new FormControl('', Validators.required),
     courseName:  new FormControl('', Validators.required),
     dateOfBirth: new FormControl('', Validators.required),
     semester: new FormControl('', Validators.required),
-    password: new FormControl('',[ Validators.required, Validators.minLength(6)])
+    bach: new FormControl('', Validators.required),
+    passingYear: new FormControl('', Validators.required),
+    // password: new FormControl('',[ Validators.required, Validators.minLength(6)])
   })
 
   onSignUp(){

@@ -8,13 +8,17 @@ import { ResultComponent } from './result/result.component';
 import { PayFeesComponent } from './pay-fees/pay-fees.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RaiseQueryComponent } from './raise-query/raise-query.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 @NgModule({
   declarations: [
     ViewProfileComponent,
     PersonalInfoComponent,
     ResultComponent,
     PayFeesComponent,
-    RaiseQueryComponent
+    RaiseQueryComponent,
+    ContactusComponent,
+    AboutusComponent
   ],
   imports: [
     CommonModule,

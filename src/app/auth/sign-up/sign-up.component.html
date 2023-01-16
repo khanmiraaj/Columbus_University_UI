@@ -1,121 +1,199 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 image">
-            <img src="./assets/images/graduation.jpg" alt="">
+
+
+
+
+
+
+
+<div class="container-fluid my-3">
+  <div class="row">
+    <div class="col-8 mx-auto shadow-sm p-3 mb-5 bg-body rounded">
+      <div class="text-center">
+        <img src="./assets/images/columbus_logo.png" class="w-25" alt="Columbus University Logo">
+      </div>
+      <!-- <hr> -->
+      <form [formGroup]="signupform" (ngSubmit)="onSignUp()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">University Roll Number</label>
+            <input type="text" class="form-control" placeholder="Enter Roll No"
+                formControlName="universityRollNo">
+    
+            <span *ngIf="!signupform.get('universityRollNo').valid && 
+            signupform.get('universityRollNo').touched" style="color: red;"> 
+            please enter valid roll no</span>
+            <span *ngIf="submitted && signupform.get('universityRollNo').untouched"
+             style="color: red;"> please enter rollno</span>
+    
         </div>
-
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 signup">
-            <div class="logo">
-                <img src="./assets/images/columbus_logo.png" alt="Columbus University Logo">
-            </div>
-            <div class="signupform">
-                <h1>STUDENT REGISTERATION </h1>
-                <form [formGroup]="signupform" (ngSubmit)="onSignUp()">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">University Roll Number</label>
-                        <input type="text" class="form-control" placeholder="Enter Roll No"
-                            formControlName="universityRollNo">
-
-                        <span *ngIf="!signupform.get('universityRollNo').valid && 
-                        signupform.get('universityRollNo').touched" style="color: red;"> 
-                        please enter valid roll no</span>
-                        <span *ngIf="submitted && signupform.get('universityRollNo').untouched"
-                         style="color: red;"> please enter rollno</span>
-
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                        <input type="text" class="form-control" placeholder="Enter First Name"
-                            formControlName="firstName">
-
-                            <span *ngIf="!signupform.get('firstName').valid && 
-                            signupform.get('firstName').touched" style="color: red;"> 
-                            please enter first name</span>
-                            <span *ngIf="submitted && signupform.get('firstName').untouched"
-                             style="color: red;"> please enter first name</span>     
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Last Name"
-                            formControlName="lastName">
-
-                            <span *ngIf="!signupform.get('lastName').valid && 
-                            signupform.get('lastName').touched" style="color: red;"> 
-                            please enter last name</span>
-                            <span *ngIf="submitted && signupform.get('lastName').untouched"
-                             style="color: red;"> please enter last name</span>    
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Course</label>
-                        <input type="text" class="form-control" placeholder="Enter Course" 
-                        formControlName="course">
-
-                        <span *ngIf="!signupform.get('course').valid && 
-                        signupform.get('course').touched" style="color: red;"> 
-                        please enter course</span>
-                        <span *ngIf="submitted && signupform.get('course').untouched"
-                         style="color: red;"> please enter course</span>  
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Course Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Course Name"
-                            formControlName="courseName">
-
-                            <span *ngIf="!signupform.get('courseName').valid && 
-                            signupform.get('courseName').touched" style="color: red;"> 
-                            please enter course name</span>
-                            <span *ngIf="submitted && signupform.get('courseName').untouched"
-                             style="color: red;"> please enter course name</span> 
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
-                        <input type="text" class="form-control" placeholder="Enter Date of Birth"
-                            formControlName="dateOfBirth">
-
-                            <span *ngIf="!signupform.get('dateOfBirth').valid && 
-                            signupform.get('dateOfBirth').touched" style="color: red;"> 
-                            please enter dateofbirth</span>
-                            <span *ngIf="submitted && signupform.get('dateOfBirth').untouched"
-                             style="color: red;"> please enter dateofbirth</span> 
-
-                            
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Semester</label>
-                        <input type="text" class="form-control" placeholder="Enter Semester" 
-                        formControlName="semester">
-                        <span *ngIf="!signupform.get('semester').valid && 
-                        signupform.get('semester').touched" style="color: red;"> 
-                        please enter semester</span>
-                        <span *ngIf="submitted && signupform.get('semester').untouched"
-                         style="color: red;"> please enter semester</span>
-                        
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Password</label>
-                        <input type="Password" class="form-control" placeholder="Enter Password"
-                            formControlName="password">
-
-                            <span *ngIf="!signupform.get('password').valid && 
-                            signupform.get('password').touched" style="color: red;"> 
-                            please enter password</span>
-                        <span *ngIf="submitted && 
-                        signupform.get('password').untouched" style="color: red;"> 
-                            please enter password</span>
-                    </div>
-
-                    <div *ngIf= "invalid_cred && submitted" class="alert alert-danger" role="alert">
-                        <i class="bi bi-exclamation-triangle-fill"></i>
-                        <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -->
-                         Already Registered with Us
-                      </div>
-                     
-                    <div class="actions">
-                        <button class="btn btn-success" type="submit">Register</button>
-                        <button class="btn btn-success" (click)="SignIn()">SignIn</button>
-                    </div>
-                </form>
-            </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">First Name</label>
+            <input type="text" class="form-control" placeholder="Enter First Name"
+                formControlName="firstName">
+    
+                <span *ngIf="!signupform.get('firstName').valid && 
+                signupform.get('firstName').touched" style="color: red;"> 
+                please enter first name</span>
+                <span *ngIf="submitted && signupform.get('firstName').untouched"
+                 style="color: red;"> please enter first name</span>     
         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name"
+                formControlName="lastName">
+    
+                <span *ngIf="!signupform.get('lastName').valid && 
+                signupform.get('lastName').touched" style="color: red;"> 
+                please enter last name</span>
+                <span *ngIf="submitted && signupform.get('lastName').untouched"
+                 style="color: red;"> please enter last name</span>    
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Father Name mather</label>
+          <input type="text" class="form-control" placeholder="Enter Father Name"
+                formControlName="fatherName">
+    
+                <span *ngIf="!signupform.get('fatherName').valid && 
+                signupform.get('fatherName').touched" style="color: red;"> 
+                please enter last name</span>
+                <span *ngIf="submitted && signupform.get('fatherName').untouched"
+                 style="color: red;"> please enter last name</span> 
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Mother Name</label>
+          <input type="text" class="form-control" placeholder="Enter Mother Name"
+                formControlName="motherName">
+    
+                <span *ngIf="!signupform.get('motherName').valid && 
+                signupform.get('motherName').touched" style="color: red;"> 
+                please enter mother name</span>
+                <span *ngIf="submitted && signupform.get('matherName').untouched"
+                 style="color: red;"> please enter mother name</span> 
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Course</label>
+            <!-- <input type="text" class="form-control" placeholder="Enter Course" 
+            formControlName="course"> -->
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select Course</option>
+              <option value="ug">UG</option>
+              <option value="pg">PG</option>
+            </select>
+            <span *ngIf="!signupform.get('course').valid && 
+            signupform.get('course').touched" style="color: red;"> 
+            please enter course</span>
+            <span *ngIf="submitted && signupform.get('course').untouched"
+             style="color: red;"> please enter course</span>  
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Course Name</label>
+            <!-- <input type="text" class="form-control" placeholder="Enter Course Name"
+                formControlName="courseName"> -->
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select Course Name</option>
+                  <option value="bca">BCA</option>
+                  <option value="bba">BBA</option>
+                  <option value="btech">BTECH</option>
+                  <option value="mca">MCA</option>
+                  <option value="mba">MBA</option>
+                  <option value="mtech">MTECH</option>
+                </select>
+                <span *ngIf="!signupform.get('courseName').valid && 
+                signupform.get('courseName').touched" style="color: red;"> 
+                please enter course name</span>
+                <span *ngIf="submitted && signupform.get('courseName').untouched"
+                 style="color: red;"> please enter course name</span> 
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" placeholder="Enter Date of Birth"
+                formControlName="dateOfBirth">
+    
+                <span *ngIf="!signupform.get('dateOfBirth').valid && 
+                signupform.get('dateOfBirth').touched" style="color: red;"> 
+                please enter dateofbirth</span>
+                <span *ngIf="submitted && signupform.get('dateOfBirth').untouched"
+                 style="color: red;"> please enter dateofbirth</span> 
+    
+                
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Semester</label>
+            <input type="text" class="form-control" placeholder="Enter Semester" 
+            formControlName="semester">
+            <span *ngIf="!signupform.get('semester').valid && 
+            signupform.get('semester').touched" style="color: red;"> 
+            please enter semester</span>
+            <span *ngIf="submitted && signupform.get('semester').untouched"
+             style="color: red;"> please enter semester</span>
+            
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Bachs</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>select bach</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            
+          </select>
+    
+                <span *ngIf="!signupform.get('bach').valid && 
+                signupform.get('bach').touched" style="color: red;"> 
+                please select bach name</span>
+                <span *ngIf="submitted && signupform.get('bach').untouched"
+                 style="color: red;"> please select bach name</span> 
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Passing Year</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>select passing year</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+          </select>
+          <span *ngIf="!signupform.get('passingYear').valid && 
+          signupform.get('passingYear').touched" style="color: red;"> 
+          please enter passing year</span>
+          <span *ngIf="submitted && signupform.get('passingYear').untouched"
+           style="color: red;"> please enter passing year</span>
+          
+      </div>
+        <!-- <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="Password" class="form-control" placeholder="Enter Password"
+                formControlName="password">
+    
+                <span *ngIf="!signupform.get('password').valid && 
+                signupform.get('password').touched" style="color: red;"> 
+                please enter password</span>
+            <span *ngIf="submitted && 
+            signupform.get('password').untouched" style="color: red;"> 
+                please enter password</span>
+        </div> -->
+    
+        <div *ngIf= "invalid_cred && submitted" class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -->
+             Already Registered with Us
+          </div>
+         
+        <div class="actions">
+            <button class="btn btn-success" type="submit">Register</button>
+            <button class="btn btn-success" (click)="SignIn()">SignIn</button>
+        </div>
+    </form>
     </div>
+  </div>
 </div>

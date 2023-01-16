@@ -1,68 +1,51 @@
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 background">
-            <img src="./assets/images/college.jpg" alt="">
-
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 signin">
-            <div class="logo">
-                <img src="./assets/images/columbus_logo.png" alt="Columbus University logo">
-            </div>
-           <div class="block">
-            <div class="slogan">
-                <p>Education is the movement from darkness to light.</p>
-            </div>
-           </div>
-            <div class="login mt-3">
-                <div class="signinheading">
-                    <h3>SIGN IN</h3>
-                </div>
-                <div class="loginform">
-                    <form [formGroup]="loginform" (ngSubmit)="onSignIn()">
-                        <div class="mb-3 mt-3">
-                            <label for="rollno" class="form-label">University Roll Number</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Enter Rollno" formControlName="universityRollNo" [(ngModel)]="registerStudent.universityRollNo" >
-                            <span *ngIf="!loginform.get('universityRollNo').valid && 
-                                 loginform.get('universityRollNo').touched" style="color: red;"> please enter valid
-                                roll no</span>
-                            <span *ngIf="submitted && 
-                                 loginform.get('universityRollNo').untouched" style="color: red;"> please enter roll
-                                no</span>
-                        </div>
-                        <div class="mb-3 mt-3">
-                            <label for="password" class="form-label">Password </label>
-                            <input type="password" class="form-control" id="exampleFormControlInput2"
-                                placeholder="Enter password" formControlName="password">
-                            <span *ngIf="!loginform.get('password').valid && 
-                                loginform.get('password').touched" style="color: red;"> please enter password</span>
-                            <span *ngIf="submitted && 
-                                loginform.get('password').untouched" style="color: red;"> please enter password</span>
-                        </div>
-                        
-                        
- <div *ngIf= "invalid_cred && submitted" class="alert alert-danger" role="alert">
-    <i class="bi bi-exclamation-triangle-fill"></i>
-    <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -->
-    Invalid Credentials
-     <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button>
+<div class="backgroundColor">
+  <div class="text-center">
+    <img src="./assets/images/columbus_logo.png" class="img-fluid" alt="Columbus University logo">
   </div>
-  
-                        <div class="mb-2 forgotpwd"><a href="">Forgot Password?</a></div>
-                        <div class="submit ">
-                            <div class="row1">
-                                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5 box">
-                                    <button class="btn btn-primary" type="submit">Sign In</button>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5 box">
-                                    <button class="btn btn-success" (click)="Register()">Register</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<section class="container-fluid background">
+  <div class="d-flex justify-content-center">
+    <div class="card shadow-none bg-body rounded">
+      <div class="card-header">
+        <h6 class="text-center">SING IN</h6>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginform" (ngSubmit)="onSignIn()">
+          <div class="">
+              <label for="rollno" class="form-label">University Roll Number</label>
+              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1"
+                  placeholder="Enter Rollno" formControlName="universityRollNo" [(ngModel)]="registerStudent.universityRollNo" >
+              <span *ngIf="!loginform.get('universityRollNo').valid && 
+                   loginform.get('universityRollNo').touched" style="color: red;"> please enter valid
+                  roll no</span>
+              <span *ngIf="submitted && 
+                   loginform.get('universityRollNo').untouched" style="color: red;"> please enter roll
+                  no</span>
+          </div>
+          <div class="">
+              <label for="password" class="form-label">Password </label>
+              <input type="password" class="form-control form-control-sm" id="exampleFormControlInput2"
+                  placeholder="Enter password" formControlName="password">
+              <span *ngIf="!loginform.get('password').valid && 
+                  loginform.get('password').touched" style="color: red;"> please enter password</span>
+              <span *ngIf="submitted && 
+                  loginform.get('password').untouched" style="color: red;"> please enter password</span>
+          </div>
+            <div *ngIf= "invalid_cred && submitted" class="alert alert-danger" role="alert">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -->
+              Invalid Credentials
+              <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button>
             </div>
-        </div>
+          <div class="text-center"><a href="">Forgot Password?</a></div>
+          <div class="mt-3">
+            <button class="btn btn-primary btn-sm me-4" type="submit">Sign In</button>
+            <button class="btn btn-success btn-sm" (click)="Register()">Register</button>
+          </div>
+      </form>
+      </div>
     </div>
+  </div>
+</section>
 </div>
+

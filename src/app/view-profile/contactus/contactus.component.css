@@ -1,0 +1,81 @@
+button{
+  border: none;
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 20px;
+}
+.btn{
+  border: none;
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 20px;
+}
+/* .bi:hover{
+  opacity: 1.7rem;
+  font-size: 20px;
+} */
+.facebook{
+  background: #3B5998;
+  color: white;
+}
+.facebook:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+}
+.messenger{
+  background: #567ed5;
+  color: white;
+}
+.messenger:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+}
+.whatsapp{
+  background: #2f6c36;
+  color: white;
+}
+.whatsapp:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+}
+.github{
+  background-color: #000;
+  color: wheat;
+}
+.github:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+  
+}
+.instagram{
+  background-color: rgb(215, 213, 213);
+  color: rgb(215, 92, 92);
+}
+.instagram:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+}
+.telephone{
+  background-color: bisque;
+}
+.telephone:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+}
+.twitter{
+  background-color: azure;
+}
+.twitter:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+}
+.envelope{
+  background-color: rgb(129, 71, 128);
+  color: #fff;
+}
+.envelope:hover{
+  opacity: 1.7rem;
+  font-size: 25px;
+}
