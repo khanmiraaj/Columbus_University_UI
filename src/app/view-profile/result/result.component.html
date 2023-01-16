@@ -1,0 +1,72 @@
+<div class="container my-5">
+  <!-- Nav Start  -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active"  aria-current="page" routerLink="/student/view_profile/result">Result</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/student/view_profile/{{datas.studentResultDto.universityRollNo}}/payfees">Pay Fees</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Raise Query</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link float-end" routerLink="/student/view_profile/{{datas.studentResultDto.universityRollNo}}">Personal Info</a>
+    </li>
+  </ul>
+  <!-- Nav End -->
+  <div class="card">
+    <div class="card-header bg-dark text-light">
+      <h4>Student Final Result</h4>
+    </div>
+    <div class="card-body">
+      <h5 class="text-center">Master Of Computer Application(MCA)</h5>
+      <div class="row">
+        <div class="col-8">
+          <h6>UID: </h6>
+      <h6>Name: </h6>
+      <h6>Father Name:</h6>
+      <h6>Mather Name:</h6>
+      <h6>Programe Name</h6>
+      <h6>Percentage: </h6>
+        </div>
+        <div class="col-4 my-2">
+          <div class="card" style="width: 18rem;">
+            <img src="../../../assets/images/graduation.jpg" class="img-fluid p-2 w-75" alt="">
+           
+          </div>
+        </div>
+      </div>
+      <div class="p-2 rounded" style="background-color: rgb(159, 144, 83);">Semester</div>
+      <div class="table-responsive-md">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Subject Code</th>
+              <th>Subject Name</th>
+              <th>Full Marks</th>
+              <th>Marks Obtained</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of datas.studentResultDto.subjectMarksDetails">
+              <td>{{data.subjectCode}}</td>
+              <td>{{data.subjectName}}</td>
+              <td>{{data.fullMarks}}</td>
+              <td>{{data.marksObtained}}</td>
+              <td>{{data.grade}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Disclaimer: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam maxime temporibus quia! Possimus voluptatibus, vero praesentium excepturi rem laboriosam dolorem id, voluptate qui cumque ducimus eligendi hic minus delectus amet!</p>
+    </div>
+  </div>
+</div>

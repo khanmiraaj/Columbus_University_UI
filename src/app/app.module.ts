@@ -8,12 +8,14 @@ import { ColumbusService } from './service/columbus.service';
 import {  HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+// import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
+    // StudentDetailsComponent,
     
   ],
   imports: [

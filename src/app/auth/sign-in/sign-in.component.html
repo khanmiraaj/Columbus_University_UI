@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 background">
@@ -22,7 +23,7 @@
                         <div class="mb-3 mt-3">
                             <label for="rollno" class="form-label">University Roll Number</label>
                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Enter Rollno" formControlName="universityRollNo">
+                                placeholder="Enter Rollno" formControlName="universityRollNo" [(ngModel)]="registerStudent.universityRollNo" >
                             <span *ngIf="!loginform.get('universityRollNo').valid && 
                                  loginform.get('universityRollNo').touched" style="color: red;"> please enter valid
                                 roll no</span>
@@ -39,19 +40,23 @@
                             <span *ngIf="submitted && 
                                 loginform.get('password').untouched" style="color: red;"> please enter password</span>
                         </div>
+                        
+                        
+ <div *ngIf= "invalid_cred && submitted" class="alert alert-danger" role="alert">
+    <i class="bi bi-exclamation-triangle-fill"></i>
+    <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -->
+    Invalid Credentials
+     <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button>
+  </div>
+  
                         <div class="mb-2 forgotpwd"><a href="">Forgot Password?</a></div>
-                        <div *ngIf= "invalid_cred && submitted" class="alert alert-danger" role="alert">
-                            <i class="bi bi-exclamation-triangle-fill"></i>
-                            <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -->
-                            Invalid Credentials
-                          </div>
                         <div class="submit ">
                             <div class="row1">
                                 <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5 box">
                                     <button class="btn btn-primary" type="submit">Sign In</button>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5 box">
-                                    <button class="btn btn-success" routerLink="signup" type="click">Register</button>
+                                    <button class="btn btn-success" (click)="Register()">Register</button>
                                 </div>
                             </div>
                         </div>
