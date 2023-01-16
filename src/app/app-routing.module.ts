@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'signin',component:SignInComponent},
   {path:'signup', component: SignUpComponent},
   // {path:'student-details/:unversityRollNo',component:StudentDetailsComponent},
-  { path: 'student/view_profile', loadChildren: () => import('./view-profile/view-profile.module').then(m => m.ViewProfileModule) }
+  { path: 'student/view_profile/:unversityRollNo', loadChildren: () => import('./view-profile/view-profile.module').then(m => m.ViewProfileModule) }
 ];
 
 @NgModule({

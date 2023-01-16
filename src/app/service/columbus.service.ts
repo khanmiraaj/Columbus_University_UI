@@ -17,7 +17,7 @@ export class ColumbusService {
 
    
 
-baseUrl:String="http://localhost:8080/student"
+baseUrl:String="http://localhost:8080/student/view_profile"
 
   registerStudent(student:RegisterStudent){
     return this.http.post("http://localhost:8080/student/new-student", student)
@@ -36,6 +36,11 @@ baseUrl:String="http://localhost:8080/student"
 
   getStudentDetails(id:number):Observable<StudentResponse>{
     return this.http.get<StudentResponse>(`${this.baseUrl}/${id}`);
+
+  }
+
+  getStudentResult(id:number):Observable<StudentResponse>{
+    return this.http.get<StudentResponse>(`${this.baseUrl}/${id}/result`);
 
   }
 

@@ -57,7 +57,7 @@ export class SignInComponent implements OnInit {
      if(res.statusCode.charAt(0)=='S'){
       this.valid_cred=true;
       Swal.fire("Congratulation!..",'Login Successfully','success')
-      this.router.navigate(['student-details',this.registerStudent.universityRollNo]);
+      this.router.navigate(['student/view_profile',this.registerStudent.universityRollNo]);
      }
    }) 
    
