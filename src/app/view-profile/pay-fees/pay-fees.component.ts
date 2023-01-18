@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FeeDetails } from 'src/app/Model/FeeDetails';
 import { StudentResponse } from 'src/app/Model/StudentResponse.model';
 import { ColumbusService } from 'src/app/service/columbus.service';
 import { FormsModule } from '@angular/forms'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pay-fees',
@@ -22,7 +23,8 @@ export class PayFeesComponent implements OnInit {
   
 
   constructor(private columbusService:ColumbusService,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute,
+    private router:Router) { }
 
   data={
     "feeAmount": 15000,
@@ -56,7 +58,14 @@ console.log("Check");
     this.feeDetails.feeAmount=feeAmount;
     console.log(this.feeDetails);
     this.columbusService.updateStudentFeeDetails(this.feeDetails).subscribe(data=>{
-      console.log(data);
+      this.datas=this.studentResponse=data;
+      console.log(this.datas.statusCode);
+      if(this.datas.statusCode.charAt(0)=='S'){
+        //this.valid_cred=true;
+        Swal.fire("Fee Paid..",'Successfully!','success')
+        this.router.navigate(['student/view_profile',this.feeDetails.universityRollNo,'/payfees']);
+       }
+      
     });
 
 
