@@ -1,0 +1,44 @@
+.bckgroungShowCase{
+    position: relative;
+}
+.log{
+    position: absolute;
+    top: 0.5%;
+    /* background-color: #fff; */
+}
+.raise{
+    color: #fff;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    right: 35%;
+}
+.blockBtn{
+    color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    right: 46%;
+}
+.textareaBlock{
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    right: 35%;
+}
+.tableBlock{
+    position: absolute;
+    color: #fff;
+    top: 70%;
+    left: 25%;
+    right: 25%;
+    /* border: #fff solid 1px; */
+    /* top: 60%;
+    left: 10%;
+    right: 10%; */
+}
+.loginBlock{
+    position: absolute;
+    top: 1%;
+    opacity: 1;
+}

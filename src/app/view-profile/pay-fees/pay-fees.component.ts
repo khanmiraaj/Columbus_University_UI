@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FeeDetails } from 'src/app/Model/FeeDetails';
 import { StudentResponse } from 'src/app/Model/StudentResponse.model';
@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./pay-fees.component.css']
 })
 export class PayFeesComponent implements OnInit {
+
+  @ViewChild('closebutton') closebutton;
   amoutn=false
   feesAmount=true;
   universityRollNo:number
@@ -69,6 +71,10 @@ console.log("Check");
     });
 
 
+  }
+
+  public onSave() {
+    this.closebutton.nativeElement.click();
   }
 
 }

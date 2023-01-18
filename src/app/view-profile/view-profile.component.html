@@ -15,15 +15,16 @@
   class="navbar navbar-light bg-light fixed-top shadow-sm mb-5 bg-body rounded"
 >
   <div class="container">
-    <!-- <a class="navbar-brand" href="#" class="text-primary">Columbus</a> -->
     <h4 class="text-primary">Columbus</h4>
-    <!-- <img
-      src="G:\clientProject\Columbus_University_Ui\src\assets\images\columbus_logo.png"
-      alt=""
-    /> -->
-    <!-- <img src="../../assets/images/columbus_logo.png" class="img-fluid" alt="" /> -->
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <!-- <button class="btn btn-info px-4 me-2">Log in</button> -->
+          <span class="border rounded p-2 ms-3" routerLink="/signin"><i class="bi bi-box-arrow-left me-2"></i>Log Out</span>
+        <span class="bi bi-person-check-fill text-success ms-2" style="font-size: 30px;"></span>({{datas.studentDto.universityRollNo}}<strong>{{datas.studentDto.firstName}}</strong>)
+      </div>
+    </div>
 
-    <button
+      <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="offcanvas"
@@ -32,12 +33,15 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+  
     <div
       class="offcanvas offcanvas-end text-bg-light"
       tabindex="-1"
       id="offcanvasDarkNavbar"
       aria-labelledby="offcanvasDarkNavbarLabel"
     >
+
+    
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Columbus</h5>
         <button
@@ -65,17 +69,16 @@
             <a class="nav-link" routerLink="/student/view_profile/{{datas.studentDto.universityRollNo}}/result">Result</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/student/view_profile/raise"
-              >Raise Query</a
+            <a class="nav-link" routerLink="/student/view_profile/{{datas.studentDto.universityRollNo}}/raise">Raise Query</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/student/view_profile/contactus"
+            <a class="nav-link" routerLink="/student/view_profile/{{datas.studentDto.universityRollNo}}/contactus"
               >Contact Us</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/student/view_profile/aboutus">About Us</a>
+            <a class="nav-link" routerLink="/student/view_profile/{{datas.studentDto.universityRollNo}}/aboutus">About Us</a>
           </li>
         </ul>
         <form class="d-flex mt-3" role="search">
@@ -131,12 +134,12 @@
             <div class="card-header">Personal Info</div>
             <div class="card-body">
               <h6>University RollNo: {{datas.studentDto.universityRollNo}}</h6>
-              <h6>First Name:</h6>
-              <h6>Last Name:</h6>
+              <h6>First Name: {{datas.studentDto.firstName}}</h6>
+              <h6>Last Name: {{datas.studentDto.lastName}}</h6>
               <h6>Course: {{datas.studentDto.course}}</h6>
-              <h6>Course Name:</h6>
-              <h6>Date Of Birth:</h6>
-              <h6>Semester:</h6>
+              <h6>Course Name: {{datas.studentDto.courseName}}</h6>
+              <h6>Date Of Birth: {{datas.studentDto.dateOfBirth}}</h6>
+              <h6>Semester: {{datas.studentDto.semester}}</h6>
             </div>
           </div>
         </div>
