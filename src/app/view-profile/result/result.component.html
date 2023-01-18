@@ -37,15 +37,15 @@
       <h4>Student Final Result</h4>
     </div>
     <div class="card-body">
-      <h5 class="text-center">Master Of Computer Application(MCA)</h5>
+      <h5 class="text-center">{{datas.studentResultDto.programeName}}</h5>
       <div class="row">
         <div class="col-8">
-          <h6>UID:</h6>
-          <h6>Name:</h6>
-          <h6>Father Name:</h6>
-          <h6>Mather Name:</h6>
-          <h6>Programe Name</h6>
-          <h6>Percentage:</h6>
+          <h6>UID:{{datas.studentResultDto.universityRollNo}}</h6>
+          <h6>Name:{{datas.studentResultDto.name}}</h6>
+          <h6>Father Name:{{datas.studentResultDto.fatherName}}</h6>
+          <h6>Mather Name:{{datas.studentResultDto.motherName}}</h6>
+          <h6>Programe Name{{datas.studentResultDto.programeName}}</h6>
+          <h6>Percentage:{{datas.studentResultDto.percentage}}</h6>
         </div>
         <div class="col-4 my-2">
           <div class="card" style="width: 18rem">
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="p-2 rounded" style="background-color: rgb(159, 144, 83)">
-        Semester
+        Semester:{{datas.studentResultDto.semester}}
       </div>
       <div class="table-responsive-md">
         <table class="table">

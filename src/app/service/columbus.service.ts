@@ -49,8 +49,8 @@ baseUrl:String="http://localhost:8080/student/view_profile"
     return this.http.get<StudentResponse>(`${this.baseUrl}/${id}/payfees`);
   }
 
-  updateStudentFeeDetails(feeDetails:FeeDetails):Observable<Object>{
-    return this.http.post(`${this.baseUrl}/update_fee`,feeDetails);
+  updateStudentFeeDetails(feeDetails:FeeDetails):Observable<StudentResponse>{
+    return this.http.post<StudentResponse>(`${this.baseUrl}/update_fee`,feeDetails);
   }
 
   getPosts() {
