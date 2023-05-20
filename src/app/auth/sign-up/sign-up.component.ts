@@ -34,7 +34,8 @@ export class SignUpComponent implements OnInit {
     courseName:  new FormControl('', Validators.required),
     dateOfBirth: new FormControl('', Validators.required),
     semester: new FormControl('', Validators.required),
-    bach: new FormControl('', Validators.required),
+    batch: new FormControl('', Validators.required),
+    emailAddress:new FormControl('',Validators.required),
     passingYear: new FormControl('', Validators.required),
     // password: new FormControl('',[ Validators.required, Validators.minLength(6)])
   })
